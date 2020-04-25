@@ -20,8 +20,6 @@ class Home extends Component {
       signUpEmail: '',
       signUpPassword: '',
       signUpName: '',
-      signUpField: '',
-      signUpValue: '',
     };
 
     this.onTextboxChangeSignInEmail = this.onTextboxChangeSignInEmail.bind(this);
@@ -92,16 +90,6 @@ class Home extends Component {
       signUpName: event.target.value,
     });
   }
-  onTextboxChangeSignUpField(event) {
-    this.setState({
-      signUpField: event.target.value,
-    });
-  }
-  onTextboxChangeSignUpValue(event) {
-    this.setState({
-      signUpValue: event.target.value,
-    });
-  }
 
   onSignUp() {
     // Grab state
@@ -109,8 +97,6 @@ class Home extends Component {
       signUpEmail,
       signUpPassword,
       signUpName,
-      signUpField,
-      signUpValue,
     } = this.state;
 
     this.setState({
@@ -127,8 +113,6 @@ class Home extends Component {
         email: signUpEmail,
         password: signUpPassword,
         name: signUpName, 
-        optField: signUpField,
-        optValue: signUpValue,
       }),
     }).then(res => res.json())
       .then(json => {
@@ -140,8 +124,6 @@ class Home extends Component {
             signUpEmail: '',
             signUpPassword: '',
             signUpName: '',
-            signUpField: '',
-            signUpValue: '',
           });
         } else {
           this.setState({
@@ -234,8 +216,6 @@ class Home extends Component {
       signUpPassword,
       signUpError,
       signUpName,
-      signUpField,
-      signUpValue,
     } = this.state;
 
     if (isLoading) {

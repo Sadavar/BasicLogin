@@ -17,13 +17,6 @@ module.exports = (app) => {
     let {
       name
     } = body;
-    let {
-      optField
-    } = body;
-    let {
-      optValue
-    } = body;
-
     if (!email) {
       return res.send({
         success: false,
@@ -58,22 +51,11 @@ module.exports = (app) => {
         });
       }
 
-      // Save the new user
-      // const newUser = new User();
-
-   
-      // newUser.email = email;
-      // newUser.password = newUser.generateHash(password);
-      // newUser.name = name;
-      // newUser.optField= optField;
-      // newUser.optValue = optValue;
 
       var newUser = new User({
         email: email,
         password: password,
         name: name,
-        optField: optField,
-        optValue: optValue,
     });
       newUser.save((err, user) => {
         if (err) {
